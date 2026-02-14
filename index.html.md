@@ -20,6 +20,7 @@
       color: #4a0035;  
     }  
   
+    /* Corazones flotando */  
     .heart {  
       position: fixed;  
       bottom: -10px;  
@@ -40,6 +41,7 @@
       z-index: 10;  
     }  
   
+    /* Pantalla inicial */  
     .start-btn {  
       font-size: 32px;  
       font-weight: 700;  
@@ -57,6 +59,7 @@
       transform: scale(1.05);  
     }  
   
+    /* Tarjeta principal */  
     .card {  
       display: none;  
       background: rgba(255,255,255,0.85);  
@@ -113,6 +116,7 @@
   
 <body>  
   
+  <!-- Corazones flotando -->  
   <script>  
     function createHeart() {  
       const heart = document.createElement("div");  
@@ -128,10 +132,13 @@
   </script>  
   
   <div class="container">  
+  
+    <!-- Pantalla inicial -->  
     <button class="start-btn" onclick="showCard()">  
       Para mi morrodita 💘  
     </button>  
   
+    <!-- Contenido revelado -->  
     <div id="mainCard" class="card">  
       <h1>Para ti, mi morrodita 💞</h1>  
   
@@ -162,6 +169,7 @@
         Mensaje secreto 💗  
       </button>  
   
+      <!-- Mensaje íntimo -->  
       <div id="secretMessage" class="secret">  
         <p>  
           Morrodita… gracias por confiar en mí de una manera tan profunda.    
@@ -187,6 +195,10 @@
     function showCard() {  
       document.querySelector(".start-btn").style.display = "none";  
       document.getElementById("mainCard").style.display = "block";  
+  
+      // Música  
+      const audio = document.getElementById("music");  
+      if (audio) audio.play();  
     }  
   
     function toggleSecret() {  
@@ -194,6 +206,9 @@
       box.style.display = box.style.display === "none" ? "block" : "none";  
     }  
   </script>  
+  
+  <!-- MÚSICA: aquí pegas el link del audio -->  
+  <audio id="music" src="AQUÍ_VA_TU_AUDIO.mp3" preload="auto"></audio>  
   
 </body>  
 </html>  
